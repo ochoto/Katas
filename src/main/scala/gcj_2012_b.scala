@@ -31,8 +31,8 @@ case class Case(N: Int, S: Int, P: Int, Ti: List[Int]) {
 	}
 }
 
-object CaseBuilder {
-	def build(line: String) = 
+object Case {
+	def create(line: String) = 
 		line.split(" ").toList match { case n :: s :: p :: ti => Case(n.toInt, s.toInt, p.toInt, ti.map(_.toInt)) }
 }
 
@@ -52,7 +52,7 @@ object CurrentMain extends App {
 
 	var cnt = 1
 	lines.foreach { (l: String) => 
-		out.println(s"Case #$cnt: " + CaseBuilder.build(l).solve)
+		out.println(s"Case #$cnt: " + Case.create(l).solve)
 		cnt = cnt + 1
 	}
 
