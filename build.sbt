@@ -12,5 +12,11 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "1.9.1" % "test"
 )
 
-scalacOptions ++= Seq("-deprecation")
+scalacOptions ++= Seq("-deprecation","-feature")
+
+//initialCommands in console := "import java.math.BigInteger"
+
+//set mainClass in (Compile, run) := Some("CurrentMain")
+
+
 
