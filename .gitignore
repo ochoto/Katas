@@ -23,6 +23,7 @@ project/plugins/project/
 *.sublime-workspace
 .*.swp
 
+.history
 
 #################
 ## Eclipse
