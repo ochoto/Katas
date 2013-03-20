@@ -4,11 +4,11 @@ import java.io.PrintWriter
 // GoogleCodeJam 2012 Qual B
 
 case class Case(N: Int, S: Int, P: Int, Ti: List[Int]) {
-	private def min(a: Int, b: Int)  = if (a>=b) a else b
+	private def min(a: Int, b: Int)  = if (a<=b) a else b
 	def solve = {
 			assert(N == Ti.size)
 
-			val (unSurprisingHighPass,lowPass) = Ti.partition{ t =>
+			val (unSurprisingHighPass,lowPass) = Ti.partition { t =>
 				(t/3 >= P) || (t/3 == P-1 && t%3 > 0)
 			}
 
@@ -27,7 +27,7 @@ case class Case(N: Int, S: Int, P: Int, Ti: List[Int]) {
 
 			//s"N:$N, S:$S, P:$P, Ti:${Ti} = ${res}, un: ${unSurprisingHighPass.size}, sur: ${min(surprisable,S)}, low: ${lowPass}, sur: ${surprisable}"
 
-			unSurprisingHighPass.size + List(surprisable,S).min
+			res
 	}
 }
 
