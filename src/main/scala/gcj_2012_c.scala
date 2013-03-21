@@ -22,7 +22,7 @@ package gcj_2012_c {
 				shifted = strN.drop(i) + strN.take(i)
 				shiftedInt = shifted.toInt
 				if shiftedInt >= n && shiftedInt <= B
-			} yield (shiftedInt)).takeWhile(_ != n).size
+			} yield (shiftedInt)).toStream.takeWhile(_ != n).size
 		}
 
 		def solve = {
