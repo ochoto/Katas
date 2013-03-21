@@ -15,13 +15,20 @@ package gcj_2012_c {
 				(1 until length).exists( arrEqualWithOffset(_, a, b) )
 		}
 
+		def calcNumOfRecycledMs(n: Int): Int = {
+			val strN = n.toString
+			(for {
+				i <- 1 until length
+				shifted = strN.drop(i) + strN.take(i)
+				shiftedInt = shifted.toInt
+				if shiftedInt >= n && shiftedInt <= B
+			} yield (shiftedInt)).takeWhile(_ != n).size
+		}
+
 		def solve = {
 			(for {
 				n <- A to B
-				m <- A to B
-				if n < m
-				if isRecycled(n.toString, m.toString)
-			} yield (n,m)).size
+			} yield calcNumOfRecycledMs(n)).sum
 				//s"N:$N, S:$S, P:$P, Ti:${Ti} = ${res}, un: ${unSurprisingHighPass.size}, sur: ${min(surprisable,S)}, low: ${lowPass}, sur: ${surprisable}"
 		}
 	}
