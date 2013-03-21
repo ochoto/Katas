@@ -18,5 +18,13 @@ scalacOptions ++= Seq("-deprecation","-feature")
 
 //set mainClass in (Compile, run) := Some("CurrentMain")
 
+mainClass in (Compile, run) := Some("CurrentMain")
+
+//fork in run := true
+
+//javaOptions in run += "-server -Xms512M -Xmx2G"
+
+
+
 
 
