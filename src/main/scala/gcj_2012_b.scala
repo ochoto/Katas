@@ -36,7 +36,7 @@ object Case {
 		line.split(" ").toList match { case n :: s :: p :: ti => Case(n.toInt, s.toInt, p.toInt, ti.map(_.toInt)) }
 }
 
-object CurrentMain extends App {
+object gcj_2012_b extends App {
 	val start = System.nanoTime 
 
 	val inputFile = if (args.size > 0)
